@@ -1,0 +1,40 @@
+<div class="show">
+    <header>
+        <h1>Show Page for <%= foundFutureEvent.name %></h1>
+        <nav>
+            <ul>
+                <li class="navHead">
+                    <a href="/">Home</a>
+                </li>
+                <li class="navHead">
+                    <a href="/futureEvents">Future Events</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Community Event:</h2>
+            <ul class="ulShow">
+                <li>Event: <%= foundFutureEvent.title %></li>
+                <li>Location: <%= foundFutureEvent.location %> </li>
+                <li>Date: <%= foundFutureEvent.date %> </li>
+                <li>Cost: <%= foundFutureEvent.cost %> </li>
+                <li>Details: <%= foundFutureEvent.body %> </li>
+                <img class="center" src="<%= foundFutureEvent.img %>">
+            </ul>
+        </section>
+        <div class="showBut">
+            <section class="btn">
+                <form action="/futureEvents/<%= foundFutureEvent._id %>?_method=DELETE" method="post">
+                    <input type="submit" value="Delete post" />
+                </form>
+            </section>
+            <section class="btn">
+                <form action="/futureEvents/<%= foundFutureEvent._id %>/edit">
+                    <input type="submit" value="Edit <%= foundFutureEvent.title %> ">
+                </form>
+            </section>
+        </div>
+    </main>
+</div>

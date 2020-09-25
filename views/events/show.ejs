@@ -1,0 +1,38 @@
+<header>
+	<h1>Show Page for <%= foundEvent.name %></h1>
+	<nav>
+		<ul>
+			<li class="navHead">
+				<a href="/">Home</a>
+			</li>
+			<li class="navHead" >
+				<a href="/events">Todays Events</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<main class="show">
+	<section>
+		<h2>Community Event:</h2>
+		<ul class="ulShow">
+			<li>Event: <%= foundEvent.title %></li>
+			<li>Location: <%= foundEvent.location %> </li>
+			<li>Date: <%= foundEvent.date %> </li>
+			<li>Cost: <%= foundEvent.cost %> </li>
+			<li>Details: <%= foundEvent.body %> </li>
+			<img class="center" src="<%= foundEvent.img %>">
+		</ul>
+	</section>
+	<div class="showBut">
+		<section class="btn">
+			<form action="/events/<%= foundEvent._id %>?_method=DELETE" method="post">
+				<input type="submit" value="Delete post"/>
+			</form>
+		</section>
+		<section class="btn">
+			<form action="/events/<%= foundEvent._id %>/edit">
+				<input type="submit" value="Edit <%= foundEvent.title %> ">
+			</form>
+		</section>
+	</div>
+</main>	

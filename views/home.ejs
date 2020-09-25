@@ -1,0 +1,87 @@
+<div class="home">
+<div class="homeNav">
+        <nav class="start" style="position: relative; top: 100px; display: inline-flex; background-color: rgba(0,0,0,.14);">
+            <ul style="list-style: none; flex-direction: row; display: inline-flex; text-shadow: 2px 2px red;">
+                <li>
+                    <a href="/events">Todays Events</a>
+                </li>
+                <li>
+                    <a href="events/new">Create Todays Event</a>
+                </li>
+                <li>
+                    <a href="/futureEvents">Upcoming Events</a>
+                </li>
+                <li>
+                    <a href="/futureEvents/new">Create Upcoming Event</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="slidershow middle" style="position: relative; top: 400px; border: 2px solid #cf423b; opacity: 0.8;">
+
+        <div class="slides">
+            <input type="radio" name="r" id="r1" checked>
+            <input type="radio" name="r" id="r2">
+            <input type="radio" name="r" id="r3">
+            <input type="radio" name="r" id="r4">
+            <input type="radio" name="r" id="r5">
+
+            <div class="slide s1">
+                <img src="https://images.unsplash.com/photo-1478031813121-5f718ad4a15f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80" alt="picture-1">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1534797258760-1bd2cc95a5bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80" alt="picture-2">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1530479189735-648256bdb203?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="picture-3">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1511814667876-840c7b48d0e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="picture-4">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1572365062094-a8fc8911e942?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="picture-4">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navigation">
+    <label for="r1" class="bar"></label>
+    <label for="r2" class="bar"></label>
+    <label for="r3" class="bar"></label>
+    <label for="r4" class="bar"></label>
+</div>
+
+    <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+        <label for="r4" class="bar"></label>
+        <label for="r5" class="bar"></label>
+    </div>
+
+<script type="text/javascript">
+let lastShown = parseInt(localStorage.getItem('lastShown'));
+let maxTime = 3600000; 
+if(!lastShown | lastShown + maxTime < Date.now()) { 
+    swal({
+            title: "Welcome To Community Events",
+            text: "Please Login To Add Events",
+            closeModel: false,
+            closeOnClickOutside: false,
+            })
+            .then((page) => {
+                if (page) {
+                    swal({
+                        title: "Thank You For UnderStanding",
+                        text:"Enjoy!!",
+                        icon: "success",
+                        buttons: false,
+                        timer: 1000,
+                    });
+            };
+        });
+  localStorage.setItem('lastShown', Date.now());
+}
+</script>
+

@@ -1,0 +1,24 @@
+<header>
+    <h1>Edit <%= foundFutureEvent.title %>'s Info</h1>
+    <nav>
+        <ul>
+            <li class="navHead">
+                <a href="/">Home</a>
+            </li>
+            <li class="navHead">
+                <a href="/futureEvents">Upcoming Events</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form class="formInput" action="/futureEvents/<%= foundFutureEvent._id %>?_method=PUT"  method="POST">
+        Title Of Event: <input class="input" type="text" name="title" value="<%= foundFutureEvent.title %>" /><br/>
+        Location: <input class="input" type="text" name="location" value="<%= foundFutureEvent.location %>"/><br/>
+        Date: <input class="input" type="date" name="date" value="<%= foundFutureEvent.date %>"/><br/>
+        Cost: <input class="input" type="text" name="cost" value="<%= foundFutureEvent.cost %>"/><br/>
+        Details: <textarea class="input" name="body"><%= foundFutureEvent.body %></textarea><br/>
+        Image Url: <input class="input" type="url" name="img" value="<%= foundFutureEvent.img %>"><br/>
+        <input type="submit" value="Edit Event">
+    </form>
+</main>

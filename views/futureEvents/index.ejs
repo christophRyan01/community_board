@@ -1,0 +1,29 @@
+<div class="header">
+    <header>
+        <h1>Upcoming Events</h1>        
+        <nav>
+            <ul>
+                <li class="navHead">
+                    <a href="/">Home</a>
+                </li>
+                <li class="navHead">
+                    <a href="/futureEvents/new">Create a New Event</a>
+                </li>
+                <li class="navHead">
+                    <a href="/events">Todays Events </a>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+</div>
+<main>
+    <ul class="navHead">
+        <% foundFutureEvents.forEach(futureEvent => { %>
+        <li>
+            <a href="/futureEvents/<%= futureEvent._id %>"><%= futureEvent.title %> - <%= futureEvent.location %>
+                (<%= futureEvent.date %>) </a>
+        </li>
+        <% }) %>
+    </ul>
+</main>
